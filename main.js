@@ -13,6 +13,9 @@ app.get('/', (req, res) => {
       if(msg == '1') return res.send('1번 매크로');
       if(msg == '2') return res.send('2번 맼');
       if(msg == '3') return res.send('어ㅓㅓ 3');
+      else {
+        return res.send('msg:', msg);
+      }
     }
     else {
       res.send('서버 작동 확인'); // 클라이언트에게 "서버 작동 확인" 응답
