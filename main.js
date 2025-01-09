@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
       if(msg == '2') return res.send('2번 맼');
       if(msg == '3') return res.send('어ㅓㅓ 3');
       else {
-        return res.send('msg: ' + msg);
+        return res.send(msg + 'v1');
       }
     }
     else {
