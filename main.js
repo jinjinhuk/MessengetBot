@@ -5,7 +5,7 @@ const PORT = 3000;
 app.get('/:msg', (req, res) => {
     const msg = req.params.msg;
     console.log(msg);
-    res.send('받은 메시지: ${msg}')
+    res.send(`받은 메시지: ${msg}`)
     // if (msg) {
     //   if(msg == '1') {
     //     res.send('1번 매크로');
