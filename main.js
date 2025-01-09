@@ -4,6 +4,7 @@ const PORT = 3000;
 
 app.get('/', (req, res) => {
     const msg = req.query.msg;
+    console.log(JSON.stringify(msg));
     if (msg) {
       if(msg == '1') {
         res.send('1번 매크로');
