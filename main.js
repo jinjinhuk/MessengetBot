@@ -7,9 +7,9 @@ app.get('/', (req, res) => {
     if (msg) {
       if(msg == '1') return res.send('1번 매크로');
       else if(msg == '2') return res.send('2번 맼');
-      else if(msg == '3') return res.send('어ㅓㅓ 3');
+      else if(msg == '3방') return res.send('어ㅓㅓ 3');
       else {
-        return res.send(msg + 'v1');
+        return res.send(msg + 'v2');
       }
     }
     else {
