@@ -5,11 +5,17 @@ const PORT = 3000;
 app.get('/', (req, res) => {
     const msg = req.query.msg;
     if (msg) {
-      if(msg == '1') return res.send('1번 매크로');
-      else if(msg == '2') return res.send('2번 맼');
-      else if(msg == '3방') return res.send('어ㅓㅓ 3');
+      if(msg == '1') {
+        res.send('1번 매크로');
+      }
+      else if(msg == '2') {
+        res.send('2번 맼');
+      }
+      else if(msg == '3방') {
+        res.send('어ㅓㅓ 3'); 
+      }
       else {
-        return res.send(msg + 'v2');
+        res.send(msg + 'v2');
       }
     }
     else {
