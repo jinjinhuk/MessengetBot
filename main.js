@@ -2,14 +2,8 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
-function removeHtmlTags(html) {
-    // HTML 태그를 제거하고 텍스트만 반환
-    return html.replace(/<[^>]*>/g, '');
-}
-
 app.get('/', (req, res) => {
     const msg = req.query.msg;
-    console.log(msg);
     if (msg) {
       if(msg == '1') return res.send('1번 매크로');
       else if(msg == '2') return res.send('2번 맼');
