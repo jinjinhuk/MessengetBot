@@ -9,10 +9,11 @@ function removeHtmlTags(html) {
 
 app.get('/', (req, res) => {
     const msg = req.query.msg;
+    console.log(msg);
     if (msg) {
       if(msg == '1') return res.send('1번 매크로');
-      if(msg == '2') return res.send('2번 맼');
-      if(msg == '3') return res.send('어ㅓㅓ 3');
+      else if(msg == '2') return res.send('2번 맼');
+      else if(msg == '3') return res.send('어ㅓㅓ 3');
       else {
         return res.send(msg + 'v1');
       }
