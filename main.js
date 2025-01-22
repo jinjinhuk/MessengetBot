@@ -2,27 +2,12 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
-app.get('/:msg', (req, res) => {
-    let msg = req.params.msg;
+// 주 코드
+app.get('/', (req, res) => {
+    console.log(req);
+    let msg = req.query.msg; // 쿼리 매개변수로 메시지 받기
     let message = `받은 메시지: ${msg}`;
-    res.send(message);
-    // if (msg) {
-    //   if(msg == '1') {
-    //     res.send('1번 매크로');
-    //   }
-    //   else if(msg == '2') {
-    //     res.send('2번 맼');
-    //   }
-    //   else if(msg == '3방') {
-    //     res.send('어ㅓㅓ 3'); 
-    //   }
-    //   else {
-    //     res.send(msg + 'v2');
-    //   }
-    // }
-    // else {
-    //   res.send('서버 작동 확인'); // 클라이언트에게 "서버 작동 확인" 응답
-    // }
+    res.send(message); // 채팅 메시지를 보냄
 });
 
 app.listen(PORT, () => {
