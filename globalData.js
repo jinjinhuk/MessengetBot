@@ -90,13 +90,15 @@ export const minerals = [
 
 export const PATH = "./data/userData.json";
 
-export const userData = (() => {
+function files() {
   if (!fs.existsSync(PATH)) {
     fs.writeFileSync(PATH, "{}");  // 파일이 없으면 빈 JSON 객체를 작성합니다.
   }
-  return JSON.parse(fs.readFileSync(PATH, 'utf8'));  // 파일을 읽고 JSON으로 파싱합니다.
-})();
+  
+  const fileContent = fs.readFileSync(PATH, 'utf8');
+  return fileContent ? JSON.parse(fileContent) : {};  // 파일 내용이 비어있으면 빈 객체 반환
+};
 
+export const userData = files();
 export const isMining = {};
-
 export const lastExecutedTime = {};
