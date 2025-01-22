@@ -1,4 +1,5 @@
 import fs from 'fs';  // fs 모듈을 가져옵니다.
+import path from 'path';
 
 export const pets = [
   { name: "고양이", price: 1000, ability: "광물 크기 +5%" },
@@ -88,9 +89,13 @@ export const minerals = [
   "엑소광석"
 ];
 
-export const PATH = "./data/userData.json";
+export const PATH = path.resolve(__dirname, "./data/userData.json");
+const dirPath = path.dirname(PATH); // 디렉터리 경로 추출
 
 function files() {
+  if (!fs.existsSync(dirPath)) {
+    fs.mkdirSync(dirPath, { recursive: true }) // 디렉터리 생성
+  }
   if (!fs.existsSync(PATH)) {
     fs.writeFileSync(PATH, "{}");  // 파일이 없으면 빈 JSON 객체를 작성합니다.
   }
