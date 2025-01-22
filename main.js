@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
     }
 
     if(query.room && query.content && query.name && query.isGroupChat) {
-        response(query.room, query.content, query.name, query.isGroupChat, replier, null)
+        const error = response(query.room, query.content, query.name, query.isGroupChat, replier, null)
     } else {
         res.send("데이터가 정상적으로 전송되지 않았습니다.");
     }
